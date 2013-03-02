@@ -1,4 +1,10 @@
-<h1>Listing pictures</h1>
+<h4>Upload pictures</h4>
+
+<%= direct_upload_form_for @uploader do |f| %>
+  <p><%= f.file_field :pict_file %></p>
+  <p><%= f.submit "Upload image" %></p>
+
+<% end %>
 
 <table>
   <tr>
@@ -22,8 +28,4 @@
 
 <%#= link_to 'New Picture', new_picture_path %>
 
-<%= direct_upload_form_for @uploader do |f| %>
-  <p><%= f.file_field :pict_file %></p>
-  <p><%= f.submit "Upload image" %></p>
 
-<% end %>

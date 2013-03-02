@@ -24,8 +24,10 @@
   <!-- Carousel items -->
   <div class="carousel-inner">
   	<% @pictures.each do |picture| %>
+<h3 style="display:block;position:absolute;z-index:5000;"><%= picture.title %></h3>
     <div class="item <%#= item_first %>">
-    	<div class="h2bg"><h2><%= picture.title %></h2></div>
+<h3 style="display:block;position:absolute;z-index:5000;"><%= picture.title %></h3>
+    	<div class="h2bg"><h2><%#= picture.title %></h2></div>
       <%= image_tag picture.pict_file_url, :class => 'big-image' %></div>
     <% end %>
   </div>
