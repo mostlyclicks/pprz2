@@ -918,3 +918,1481 @@ Served asset /pictures.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 11:38:40 -0600
 Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/pictures" for 127.0.0.1 at 2013-03-02 11:49:38 -0600
+Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (0.4ms)[0m  [1mSELECT "pictures".* FROM "pictures" [0m
+  Rendered pictures/index.html.erb within layouts/application (67.5ms)
+Completed 200 OK in 345ms (Views: 243.8ms | ActiveRecord: 72.7ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 11:49:38 -0600
+Served asset /pictures.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 11:49:39 -0600
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 11:49:39 -0600
+Served asset /jquery.js - 304 Not Modified (78ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 11:49:39 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 11:49:39 -0600
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 11:49:39 -0600
+Served asset /pictures.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 11:49:40 -0600
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/pictures/new?bucket=mc_pprz&key=uploads%2F7a479250-658f-0130-a55c-00264a03e1d6%2Fright-calendar.png&etag=%22cf41733906b52e83633c3a0f4eb33384%22" for 127.0.0.1 at 2013-03-02 11:50:05 -0600
+Processing by PicturesController#new as HTML
+  Parameters: {"bucket"=>"mc_pprz", "key"=>"uploads/7a479250-658f-0130-a55c-00264a03e1d6/right-calendar.png", "etag"=>"\"cf41733906b52e83633c3a0f4eb33384\""}
+  Rendered pictures/_form.html.erb (121.4ms)
+  Rendered pictures/new.html.erb within layouts/application (166.4ms)
+Completed 200 OK in 192ms (Views: 191.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 11:50:05 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 11:50:05 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 11:50:05 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 11:50:05 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 11:50:05 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 11:50:06 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 11:50:06 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2013-03-02 11:50:16 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zQ8oDBrMXjarIhR0aSY3JqoXgRz6qUPAQn6n86ao/pw=", "picture"=>{"key"=>"uploads/7a479250-658f-0130-a55c-00264a03e1d6/right-calendar.png", "title"=>"Hello kitty"}, "commit"=>"Create Picture"}
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36mPicture Exists (18.7ms)[0m  [1mSELECT 1 AS one FROM "pictures" WHERE "pictures"."pict_file" = '7a479250-658f-0130-a55c-00264a03e1d6/right-calendar.png' LIMIT 1[0m
+  [1m[35mSQL (91.7ms)[0m  INSERT INTO "pictures" ("created_at", "pict_file", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sat, 02 Mar 2013 17:50:16 UTC +00:00], ["pict_file", "7a479250-658f-0130-a55c-00264a03e1d6/right-calendar.png"], ["title", "Hello kitty"], ["updated_at", Sat, 02 Mar 2013 17:50:16 UTC +00:00]]
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 266ms
+
+Redis::CannotConnectError (Error connecting to Redis on localhost:6379 (ECONNREFUSED)):
+  app/models/picture.rb:12:in `enqueue_image'
+  app/controllers/pictures_controller.rb:48:in `block in create'
+  app/controllers/pictures_controller.rb:47:in `create'
+
+
+  Rendered /Users/ceinterone17/.rvm/gems/ruby-1.9.3-p194@pprz2/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /Users/ceinterone17/.rvm/gems/ruby-1.9.3-p194@pprz2/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/ceinterone17/.rvm/gems/ruby-1.9.3-p194@pprz2/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.2ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2013-03-02 11:52:29 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zQ8oDBrMXjarIhR0aSY3JqoXgRz6qUPAQn6n86ao/pw=", "picture"=>{"key"=>"uploads/7a479250-658f-0130-a55c-00264a03e1d6/right-calendar.png", "title"=>"Hello kitty"}, "commit"=>"Create Picture"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPicture Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "pictures" WHERE "pictures"."pict_file" = '7a479250-658f-0130-a55c-00264a03e1d6/right-calendar.png' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "pictures" ("created_at", "pict_file", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sat, 02 Mar 2013 17:52:29 UTC +00:00], ["pict_file", "7a479250-658f-0130-a55c-00264a03e1d6/right-calendar.png"], ["title", "Hello kitty"], ["updated_at", Sat, 02 Mar 2013 17:52:29 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/pictures/5
+Completed 302 Found in 42ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/pictures/5" for 127.0.0.1 at 2013-03-02 11:52:29 -0600
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPicture Load (0.5ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1  [["id", "5"]]
+  Rendered pictures/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 11:52:29 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 11:52:29 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 11:52:29 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 11:52:29 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 11:52:29 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 11:52:30 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 11:52:30 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2013-03-02 11:52:34 -0600
+Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (0.3ms)[0m  [1mSELECT "pictures".* FROM "pictures" [0m
+  Rendered pictures/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 36ms (Views: 34.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 11:52:35 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 11:52:35 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 11:52:35 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 11:52:35 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 11:52:35 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 11:52:35 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 11:52:35 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/new?bucket=mc_pprz&key=uploads%2Fe2e8e900-658f-0130-a55c-00264a03e1d6%2FCake.jpg&etag=%2283a42198cbfb3fba3dfb01bb46f08065%22" for 127.0.0.1 at 2013-03-02 11:52:54 -0600
+Processing by PicturesController#new as HTML
+  Parameters: {"bucket"=>"mc_pprz", "key"=>"uploads/e2e8e900-658f-0130-a55c-00264a03e1d6/Cake.jpg", "etag"=>"\"83a42198cbfb3fba3dfb01bb46f08065\""}
+  Rendered pictures/_form.html.erb (3.0ms)
+  Rendered pictures/new.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 55ms (Views: 54.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 11:52:54 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 11:52:54 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 11:52:54 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 11:52:54 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 11:52:55 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 11:52:56 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 11:52:56 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2013-03-02 11:53:02 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zQ8oDBrMXjarIhR0aSY3JqoXgRz6qUPAQn6n86ao/pw=", "picture"=>{"key"=>"uploads/e2e8e900-658f-0130-a55c-00264a03e1d6/Cake.jpg", "title"=>"this is cool"}, "commit"=>"Create Picture"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPicture Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "pictures" WHERE "pictures"."pict_file" = 'e2e8e900-658f-0130-a55c-00264a03e1d6/Cake.jpg' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "pictures" ("created_at", "pict_file", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sat, 02 Mar 2013 17:53:02 UTC +00:00], ["pict_file", "e2e8e900-658f-0130-a55c-00264a03e1d6/Cake.jpg"], ["title", "this is cool"], ["updated_at", Sat, 02 Mar 2013 17:53:02 UTC +00:00]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/pictures/6
+Completed 302 Found in 8ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/pictures/6" for 127.0.0.1 at 2013-03-02 11:53:02 -0600
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mPicture Load (0.4ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1  [["id", "6"]]
+  Rendered pictures/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 67ms (Views: 63.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 11:53:03 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 11:53:03 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 11:53:03 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 11:53:03 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 11:53:03 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 11:53:04 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 11:53:04 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2013-03-02 11:53:13 -0600
+Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (0.3ms)[0m  [1mSELECT "pictures".* FROM "pictures" [0m
+  Rendered pictures/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 55ms (Views: 52.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 11:53:14 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 11:53:14 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 11:53:14 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 11:53:14 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 11:53:14 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 11:53:14 -0600
+Served asset /pictures.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 11:53:14 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/pictures" for 127.0.0.1 at 2013-03-02 11:58:53 -0600
+Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (0.3ms)[0m  [1mSELECT "pictures".* FROM "pictures" [0m
+  Rendered pictures/index.html.erb within layouts/application (65.9ms)
+Completed 200 OK in 490ms (Views: 390.7ms | ActiveRecord: 52.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 11:58:54 -0600
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 11:58:54 -0600
+Served asset /pictures.css - 304 Not Modified (72ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 11:58:54 -0600
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 11:58:54 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 11:58:54 -0600
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 11:58:55 -0600
+Served asset /pictures.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 11:58:55 -0600
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/pictures/new?bucket=mc_pprz&key=uploads%2Fc5208990-6590-0130-a55d-00264a03e1d6%2FCake.jpg&etag=%2283a42198cbfb3fba3dfb01bb46f08065%22" for 127.0.0.1 at 2013-03-02 11:59:19 -0600
+Processing by PicturesController#new as HTML
+  Parameters: {"bucket"=>"mc_pprz", "key"=>"uploads/c5208990-6590-0130-a55d-00264a03e1d6/Cake.jpg", "etag"=>"\"83a42198cbfb3fba3dfb01bb46f08065\""}
+  Rendered pictures/_form.html.erb (121.7ms)
+  Rendered pictures/new.html.erb within layouts/application (175.9ms)
+Completed 200 OK in 212ms (Views: 210.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 11:59:20 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 11:59:20 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 11:59:20 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 11:59:20 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 11:59:20 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 11:59:21 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 11:59:21 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2013-03-02 11:59:28 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zQ8oDBrMXjarIhR0aSY3JqoXgRz6qUPAQn6n86ao/pw=", "picture"=>{"key"=>"uploads/c5208990-6590-0130-a55d-00264a03e1d6/Cake.jpg", "title"=>"tutu"}, "commit"=>"Create Picture"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPicture Exists (26.3ms)[0m  [1mSELECT 1 AS one FROM "pictures" WHERE "pictures"."pict_file" = 'c5208990-6590-0130-a55d-00264a03e1d6/Cake.jpg' LIMIT 1[0m
+  [1m[35mSQL (90.4ms)[0m  INSERT INTO "pictures" ("created_at", "pict_file", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sat, 02 Mar 2013 17:59:28 UTC +00:00], ["pict_file", "c5208990-6590-0130-a55d-00264a03e1d6/Cake.jpg"], ["title", "tutu"], ["updated_at", Sat, 02 Mar 2013 17:59:28 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/pictures/7
+Completed 302 Found in 255ms (ActiveRecord: 117.8ms)
+
+
+Started GET "/pictures/7" for 127.0.0.1 at 2013-03-02 11:59:28 -0600
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPicture Load (0.5ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1  [["id", "7"]]
+  Rendered pictures/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 11:59:29 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 11:59:29 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 11:59:29 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 11:59:29 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 11:59:29 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 11:59:29 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 11:59:29 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/7" for 127.0.0.1 at 2013-03-02 11:59:51 -0600
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPicture Load (0.5ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1[0m  [["id", "7"]]
+  Rendered pictures/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 11:59:51 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 11:59:51 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 11:59:51 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 11:59:51 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 11:59:51 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 11:59:52 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 11:59:52 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/7" for 127.0.0.1 at 2013-03-02 12:01:09 -0600
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPicture Load (0.3ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1  [["id", "7"]]
+  Rendered pictures/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 51ms (Views: 50.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 12:01:09 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:01:09 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:01:09 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:01:09 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:01:09 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:01:10 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:01:10 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2013-03-02 12:02:12 -0600
+Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (0.3ms)[0m  [1mSELECT "pictures".* FROM "pictures" [0m
+  Rendered pictures/index.html.erb within layouts/application (80.5ms)
+Completed 500 Internal Server Error in 84ms
+
+ActionView::Template::Error (undefined method `image_url' for #<Picture:0x007ffab3c0fdb8>):
+    10: 
+    11: <% @pictures.each do |picture| %>
+    12:   <tr>
+    13:     <td><%= picture.image_url(:thumb).to_s %></td>
+    14:     <td><%= link_to 'Show', picture %></td>
+    15:     <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
+    16:     <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  app/views/pictures/index.html.erb:13:in `block in _app_views_pictures_index_html_erb__3553420127378651283_70357367178300'
+  app/views/pictures/index.html.erb:11:in `each'
+  app/views/pictures/index.html.erb:11:in `_app_views_pictures_index_html_erb__3553420127378651283_70357367178300'
+  app/controllers/pictures_controller.rb:9:in `index'
+
+
+  Rendered /Users/ceinterone17/.rvm/gems/ruby-1.9.3-p194@pprz2/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /Users/ceinterone17/.rvm/gems/ruby-1.9.3-p194@pprz2/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/ceinterone17/.rvm/gems/ruby-1.9.3-p194@pprz2/gems/actionpack-3.2.12/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.8ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2013-03-02 12:02:33 -0600
+Processing by PicturesController#index as HTML
+  [1m[35mPicture Load (0.4ms)[0m  SELECT "pictures".* FROM "pictures" 
+  Rendered pictures/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 36ms (Views: 33.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:02:34 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 12:02:34 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:02:34 -0600
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:02:34 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:02:34 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:02:34 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:02:34 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/2" for 127.0.0.1 at 2013-03-02 12:02:40 -0600
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPicture Load (0.5ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  Rendered pictures/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 10ms (Views: 5.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:02:41 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 12:02:41 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:02:41 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:02:41 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:02:41 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:02:41 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:02:41 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/2" for 127.0.0.1 at 2013-03-02 12:04:32 -0600
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPicture Load (0.5ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1  [["id", "2"]]
+  Rendered pictures/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:04:32 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 12:04:32 -0600
+Served asset /pictures.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:04:32 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:04:32 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:04:32 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:04:33 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:04:33 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2013-03-02 12:05:28 -0600
+Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (0.4ms)[0m  [1mSELECT "pictures".* FROM "pictures" [0m
+  Rendered pictures/index.html.erb within layouts/application (43.6ms)
+Completed 200 OK in 110ms (Views: 48.8ms | ActiveRecord: 53.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:05:30 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:05:30 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:05:30 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:05:30 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:05:30 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:05:30 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/new?bucket=mc_pprz&key=uploads%2Fb09d9a80-6591-0130-a55d-00264a03e1d6%2FScreen+Shot+2013-02-24+at+11.20.01+AM.png&etag=%2265b51d7e6706119a1eda91b1b7d3f15c%22" for 127.0.0.1 at 2013-03-02 12:05:47 -0600
+Processing by PicturesController#new as HTML
+  Parameters: {"bucket"=>"mc_pprz", "key"=>"uploads/b09d9a80-6591-0130-a55d-00264a03e1d6/Screen Shot 2013-02-24 at 11.20.01 AM.png", "etag"=>"\"65b51d7e6706119a1eda91b1b7d3f15c\""}
+  Rendered pictures/_form.html.erb (2.4ms)
+  Rendered pictures/new.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 41ms (Views: 39.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:05:47 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:05:47 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:05:47 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:05:47 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:05:47 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:05:49 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2013-03-02 12:05:55 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zQ8oDBrMXjarIhR0aSY3JqoXgRz6qUPAQn6n86ao/pw=", "picture"=>{"key"=>"uploads/b09d9a80-6591-0130-a55d-00264a03e1d6/Screen Shot 2013-02-24 at 11.20.01 AM.png", "title"=>"ppo"}, "commit"=>"Create Picture"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPicture Exists (45.8ms)[0m  [1mSELECT 1 AS one FROM "pictures" WHERE "pictures"."pict_file" = 'b09d9a80-6591-0130-a55d-00264a03e1d6/Screen Shot 2013-02-24 at 11.20.01 AM.png' LIMIT 1[0m
+  [1m[35mSQL (94.4ms)[0m  INSERT INTO "pictures" ("created_at", "pict_file", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sat, 02 Mar 2013 18:05:55 UTC +00:00], ["pict_file", "b09d9a80-6591-0130-a55d-00264a03e1d6/Screen Shot 2013-02-24 at 11.20.01 AM.png"], ["title", "ppo"], ["updated_at", Sat, 02 Mar 2013 18:05:55 UTC +00:00]]
+  [1m[36m (24.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/pictures/8
+Completed 302 Found in 202ms (ActiveRecord: 238.0ms)
+
+
+Started GET "/pictures/8" for 127.0.0.1 at 2013-03-02 12:05:55 -0600
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mPicture Load (0.6ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1  [["id", "8"]]
+  Rendered pictures/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:05:56 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:05:56 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:05:56 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:05:56 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:05:56 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:05:56 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2013-03-02 12:06:51 -0600
+Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (0.4ms)[0m  [1mSELECT "pictures".* FROM "pictures" [0m
+  Rendered pictures/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:06:51 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:06:51 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:06:51 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:06:51 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:06:51 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:06:52 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/new?bucket=mc_pprz&key=uploads%2Fe1b9da80-6591-0130-a55d-00264a03e1d6%2FScreen+Shot+2013-02-24+at+11.03.59+AM.png&etag=%22ee25682d63eaa84e672d758ba985a57f%22" for 127.0.0.1 at 2013-03-02 12:07:02 -0600
+Processing by PicturesController#new as HTML
+  Parameters: {"bucket"=>"mc_pprz", "key"=>"uploads/e1b9da80-6591-0130-a55d-00264a03e1d6/Screen Shot 2013-02-24 at 11.03.59 AM.png", "etag"=>"\"ee25682d63eaa84e672d758ba985a57f\""}
+  Rendered pictures/_form.html.erb (1.7ms)
+  Rendered pictures/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:07:02 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:07:02 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:07:02 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:07:02 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:07:02 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:07:03 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2013-03-02 12:07:09 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zQ8oDBrMXjarIhR0aSY3JqoXgRz6qUPAQn6n86ao/pw=", "picture"=>{"key"=>"uploads/e1b9da80-6591-0130-a55d-00264a03e1d6/Screen Shot 2013-02-24 at 11.03.59 AM.png", "title"=>"kkadf"}, "commit"=>"Create Picture"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPicture Exists (5.1ms)[0m  [1mSELECT 1 AS one FROM "pictures" WHERE "pictures"."pict_file" = 'e1b9da80-6591-0130-a55d-00264a03e1d6/Screen Shot 2013-02-24 at 11.03.59 AM.png' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "pictures" ("created_at", "pict_file", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sat, 02 Mar 2013 18:07:09 UTC +00:00], ["pict_file", "e1b9da80-6591-0130-a55d-00264a03e1d6/Screen Shot 2013-02-24 at 11.03.59 AM.png"], ["title", "kkadf"], ["updated_at", Sat, 02 Mar 2013 18:07:09 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/pictures/9
+Completed 302 Found in 33ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/pictures/9" for 127.0.0.1 at 2013-03-02 12:07:09 -0600
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mPicture Load (0.4ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1  [["id", "9"]]
+  Rendered pictures/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 42ms (Views: 8.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:07:09 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:07:09 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:07:09 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:07:09 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:07:09 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:07:10 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2013-03-02 12:07:19 -0600
+Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (0.4ms)[0m  [1mSELECT "pictures".* FROM "pictures" [0m
+  Rendered pictures/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 23ms (Views: 20.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:07:19 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:07:19 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:07:19 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:07:19 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:07:19 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:07:20 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/new?bucket=mc_pprz&key=uploads%2Ff23bda80-6591-0130-a55d-00264a03e1d6%2FScreen+Shot+2012-12-31+at+7.37.18+PM.png&etag=%22e2608ff1936d2afce5997038a886a38e%22" for 127.0.0.1 at 2013-03-02 12:07:31 -0600
+Processing by PicturesController#new as HTML
+  Parameters: {"bucket"=>"mc_pprz", "key"=>"uploads/f23bda80-6591-0130-a55d-00264a03e1d6/Screen Shot 2012-12-31 at 7.37.18 PM.png", "etag"=>"\"e2608ff1936d2afce5997038a886a38e\""}
+  Rendered pictures/_form.html.erb (2.2ms)
+  Rendered pictures/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:07:31 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:07:31 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:07:31 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:07:31 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:07:31 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:07:32 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2013-03-02 12:07:36 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zQ8oDBrMXjarIhR0aSY3JqoXgRz6qUPAQn6n86ao/pw=", "picture"=>{"key"=>"uploads/f23bda80-6591-0130-a55d-00264a03e1d6/Screen Shot 2012-12-31 at 7.37.18 PM.png", "title"=>"ll"}, "commit"=>"Create Picture"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPicture Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "pictures" WHERE "pictures"."pict_file" = 'f23bda80-6591-0130-a55d-00264a03e1d6/Screen Shot 2012-12-31 at 7.37.18 PM.png' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "pictures" ("created_at", "pict_file", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sat, 02 Mar 2013 18:07:36 UTC +00:00], ["pict_file", "f23bda80-6591-0130-a55d-00264a03e1d6/Screen Shot 2012-12-31 at 7.37.18 PM.png"], ["title", "ll"], ["updated_at", Sat, 02 Mar 2013 18:07:36 UTC +00:00]]
+  [1m[36m (21.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/pictures/10
+Completed 302 Found in 29ms (ActiveRecord: 22.2ms)
+
+
+Started GET "/pictures/10" for 127.0.0.1 at 2013-03-02 12:07:36 -0600
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mPicture Load (0.3ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1  [["id", "10"]]
+  Rendered pictures/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:07:36 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:07:36 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:07:36 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:07:36 -0600
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:07:36 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:07:37 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/pictures/" for 127.0.0.1 at 2013-03-02 12:16:11 -0600
+Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (0.3ms)[0m  [1mSELECT "pictures".* FROM "pictures" [0m
+  Rendered pictures/index.html.erb within layouts/application (52.5ms)
+Completed 200 OK in 1345ms (Views: 937.1ms | ActiveRecord: 207.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:16:13 -0600
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 12:16:13 -0600
+Served asset /pictures.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:16:13 -0600
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:16:13 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:16:13 -0600
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:16:13 -0600
+Served asset /pictures.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:16:14 -0600
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/pictures/new?bucket=mc_pprz&key=uploads%2F2fedbbe0-6593-0130-a55e-00264a03e1d6%2FScreen+Shot+2012-12-07+at+9.08.57+AM.png&etag=%22ee7f680ceed53238180ce9570314e147%22" for 127.0.0.1 at 2013-03-02 12:16:25 -0600
+Processing by PicturesController#new as HTML
+  Parameters: {"bucket"=>"mc_pprz", "key"=>"uploads/2fedbbe0-6593-0130-a55e-00264a03e1d6/Screen Shot 2012-12-07 at 9.08.57 AM.png", "etag"=>"\"ee7f680ceed53238180ce9570314e147\""}
+  Rendered pictures/_form.html.erb (121.5ms)
+  Rendered pictures/new.html.erb within layouts/application (165.6ms)
+Completed 200 OK in 190ms (Views: 189.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:16:26 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 12:16:26 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:16:26 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:16:26 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:16:26 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:16:27 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:16:27 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2013-03-02 12:16:32 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zQ8oDBrMXjarIhR0aSY3JqoXgRz6qUPAQn6n86ao/pw=", "picture"=>{"key"=>"uploads/2fedbbe0-6593-0130-a55e-00264a03e1d6/Screen Shot 2012-12-07 at 9.08.57 AM.png", "title"=>"ppo"}, "commit"=>"Create Picture"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPicture Exists (21.7ms)[0m  [1mSELECT 1 AS one FROM "pictures" WHERE "pictures"."pict_file" = '2fedbbe0-6593-0130-a55e-00264a03e1d6/Screen Shot 2012-12-07 at 9.08.57 AM.png' LIMIT 1[0m
+  [1m[35mSQL (102.2ms)[0m  INSERT INTO "pictures" ("created_at", "pict_file", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sat, 02 Mar 2013 18:16:32 UTC +00:00], ["pict_file", "2fedbbe0-6593-0130-a55e-00264a03e1d6/Screen Shot 2012-12-07 at 9.08.57 AM.png"], ["title", "ppo"], ["updated_at", Sat, 02 Mar 2013 18:16:32 UTC +00:00]]
+  [1m[36m (5.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/pictures/11
+Completed 302 Found in 586ms (ActiveRecord: 129.2ms)
+
+
+Started GET "/pictures/11" for 127.0.0.1 at 2013-03-02 12:16:32 -0600
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mPicture Load (0.5ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1  [["id", "11"]]
+  Rendered pictures/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 37ms (Views: 35.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:16:32 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 12:16:32 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:16:32 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:16:32 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:16:32 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:16:33 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:16:33 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2013-03-02 12:16:43 -0600
+Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (0.4ms)[0m  [1mSELECT "pictures".* FROM "pictures" [0m
+  Rendered pictures/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:16:43 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 12:16:43 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:16:43 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:16:43 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:16:43 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:16:44 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:16:44 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/new?bucket=mc_pprz&key=uploads%2F42712f40-6593-0130-a55e-00264a03e1d6%2FScreen+Shot+2012-12-20+at+11.14.15+AM.png&etag=%22e7d37e88cef3b02f5e480c9d329f5ef4%22" for 127.0.0.1 at 2013-03-02 12:17:20 -0600
+Processing by PicturesController#new as HTML
+  Parameters: {"bucket"=>"mc_pprz", "key"=>"uploads/42712f40-6593-0130-a55e-00264a03e1d6/Screen Shot 2012-12-20 at 11.14.15 AM.png", "etag"=>"\"e7d37e88cef3b02f5e480c9d329f5ef4\""}
+  Rendered pictures/_form.html.erb (1.8ms)
+  Rendered pictures/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:17:20 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:17:20 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:17:20 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:17:20 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 12:17:20 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:17:21 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:17:21 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2013-03-02 12:17:26 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zQ8oDBrMXjarIhR0aSY3JqoXgRz6qUPAQn6n86ao/pw=", "picture"=>{"key"=>"uploads/42712f40-6593-0130-a55e-00264a03e1d6/Screen Shot 2012-12-20 at 11.14.15 AM.png", "title"=>"77s"}, "commit"=>"Create Picture"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mPicture Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "pictures" WHERE "pictures"."pict_file" = '42712f40-6593-0130-a55e-00264a03e1d6/Screen Shot 2012-12-20 at 11.14.15 AM.png' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "pictures" ("created_at", "pict_file", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sat, 02 Mar 2013 18:17:26 UTC +00:00], ["pict_file", "42712f40-6593-0130-a55e-00264a03e1d6/Screen Shot 2012-12-20 at 11.14.15 AM.png"], ["title", "77s"], ["updated_at", Sat, 02 Mar 2013 18:17:26 UTC +00:00]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/pictures/12
+Completed 302 Found in 342ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/pictures/12" for 127.0.0.1 at 2013-03-02 12:17:26 -0600
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mPicture Load (0.3ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1  [["id", "12"]]
+  Rendered pictures/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 12:17:26 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:17:26 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:17:26 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:17:26 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:17:26 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:17:27 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:17:27 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/12" for 127.0.0.1 at 2013-03-02 12:17:46 -0600
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mPicture Load (0.4ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1[0m  [["id", "12"]]
+  Rendered pictures/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:17:47 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 12:17:47 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:17:47 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:17:47 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:17:47 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:17:47 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:17:47 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2013-03-02 12:18:16 -0600
+Processing by PicturesController#index as HTML
+  [1m[35mPicture Load (0.5ms)[0m  SELECT "pictures".* FROM "pictures" 
+  Rendered pictures/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 32ms (Views: 23.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:18:17 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 12:18:17 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:18:17 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:18:17 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:18:17 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:18:17 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:18:17 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/new?bucket=mc_pprz&key=uploads%2F7a2bdb10-6593-0130-a55e-00264a03e1d6%2FScreen+Shot+2012-04-25+at+9.32.58+PM.png&etag=%22f2ac5259e8997487c4b5395ea6f1a66c%22" for 127.0.0.1 at 2013-03-02 12:18:45 -0600
+Processing by PicturesController#new as HTML
+  Parameters: {"bucket"=>"mc_pprz", "key"=>"uploads/7a2bdb10-6593-0130-a55e-00264a03e1d6/Screen Shot 2012-04-25 at 9.32.58 PM.png", "etag"=>"\"f2ac5259e8997487c4b5395ea6f1a66c\""}
+  Rendered pictures/_form.html.erb (1.8ms)
+  Rendered pictures/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:18:46 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:18:46 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 12:18:46 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:18:46 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:18:46 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:18:47 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:18:47 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2013-03-02 12:18:51 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zQ8oDBrMXjarIhR0aSY3JqoXgRz6qUPAQn6n86ao/pw=", "picture"=>{"key"=>"uploads/7a2bdb10-6593-0130-a55e-00264a03e1d6/Screen Shot 2012-04-25 at 9.32.58 PM.png", "title"=>"uuty"}, "commit"=>"Create Picture"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mPicture Exists (0.3ms)[0m  SELECT 1 AS one FROM "pictures" WHERE "pictures"."pict_file" = '7a2bdb10-6593-0130-a55e-00264a03e1d6/Screen Shot 2012-04-25 at 9.32.58 PM.png' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "pictures" ("created_at", "pict_file", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", Sat, 02 Mar 2013 18:18:51 UTC +00:00], ["pict_file", "7a2bdb10-6593-0130-a55e-00264a03e1d6/Screen Shot 2012-04-25 at 9.32.58 PM.png"], ["title", "uuty"], ["updated_at", Sat, 02 Mar 2013 18:18:51 UTC +00:00]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/pictures/13
+Completed 302 Found in 106ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/pictures/13" for 127.0.0.1 at 2013-03-02 12:18:51 -0600
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPicture Load (0.3ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1[0m  [["id", "13"]]
+  Rendered pictures/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:18:51 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 12:18:51 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:18:51 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:18:51 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:18:51 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:18:52 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:18:52 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2013-03-02 12:18:59 -0600
+Processing by PicturesController#index as HTML
+  [1m[35mPicture Load (0.4ms)[0m  SELECT "pictures".* FROM "pictures" 
+  Rendered pictures/index.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 36ms (Views: 34.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 12:18:59 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:18:59 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:18:59 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:18:59 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:18:59 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:19:00 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:19:00 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2013-03-02 12:19:21 -0600
+Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (1.1ms)[0m  [1mSELECT "pictures".* FROM "pictures" [0m
+  Rendered pictures/index.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 63ms (Views: 58.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:19:21 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 12:19:21 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:19:21 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:19:21 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:19:21 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:19:23 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:19:23 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/new?bucket=mc_pprz&key=uploads%2Fa1180700-6593-0130-a55e-00264a03e1d6%2FCake.jpg&etag=%2283a42198cbfb3fba3dfb01bb46f08065%22" for 127.0.0.1 at 2013-03-02 12:19:44 -0600
+Processing by PicturesController#new as HTML
+  Parameters: {"bucket"=>"mc_pprz", "key"=>"uploads/a1180700-6593-0130-a55e-00264a03e1d6/Cake.jpg", "etag"=>"\"83a42198cbfb3fba3dfb01bb46f08065\""}
+  Rendered pictures/_form.html.erb (2.4ms)
+  Rendered pictures/new.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 52ms (Views: 51.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:19:44 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 12:19:44 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:19:44 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:19:44 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:19:44 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:19:45 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:19:45 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2013-03-02 12:19:51 -0600
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zQ8oDBrMXjarIhR0aSY3JqoXgRz6qUPAQn6n86ao/pw=", "picture"=>{"key"=>"uploads/a1180700-6593-0130-a55e-00264a03e1d6/Cake.jpg", "title"=>"giig"}, "commit"=>"Create Picture"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mPicture Exists (1.5ms)[0m  [1mSELECT 1 AS one FROM "pictures" WHERE "pictures"."pict_file" = 'a1180700-6593-0130-a55e-00264a03e1d6/Cake.jpg' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "pictures" ("created_at", "pict_file", "title", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", Sat, 02 Mar 2013 18:19:51 UTC +00:00], ["pict_file", "a1180700-6593-0130-a55e-00264a03e1d6/Cake.jpg"], ["title", "giig"], ["updated_at", Sat, 02 Mar 2013 18:19:51 UTC +00:00]]
+  [1m[36m (211.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/pictures/14
+Completed 302 Found in 468ms (ActiveRecord: 213.6ms)
+
+
+Started GET "/pictures/14" for 127.0.0.1 at 2013-03-02 12:19:51 -0600
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mPicture Load (0.3ms)[0m  SELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1  [["id", "14"]]
+  Rendered pictures/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 72ms (Views: 71.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 12:19:52 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 12:19:52 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 12:19:52 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 12:19:52 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 12:19:52 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 12:19:52 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 12:19:52 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)

@@ -34,4 +34,5 @@ Pprz2::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  ENV["REDISTOGO_URL"] = 'redis://redistogo:774c0360209bbcb00ae7d2a2cc97221f@dory.redistogo.com:10312/'
 end

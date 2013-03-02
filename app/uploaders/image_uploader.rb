@@ -44,6 +44,14 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   process :scale => [50, 50]
   # end
 
+  version :ipad do
+    process :fit_to_size => [1024, 768]
+  end
+
+  version :thumb do
+    process :scale => [25, 25]
+  end
+
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   # def extension_white_list

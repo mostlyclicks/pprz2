@@ -10,7 +10,7 @@
 
 <% @pictures.each do |picture| %>
   <tr>
-    <td><%= picture.pict_file %></td>
+    <td><%= picture.pict_file_url %></td>
     <td><%= link_to 'Show', picture %></td>
     <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
     <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -20,7 +20,7 @@
 
 <br />
 
-<%= link_to 'New Picture', new_picture_path %>
+<%#= link_to 'New Picture', new_picture_path %>
 
 <%= direct_upload_form_for @uploader do |f| %>
   <p><%= f.file_field :pict_file %></p>
