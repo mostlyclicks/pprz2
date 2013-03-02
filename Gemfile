@@ -6,6 +6,13 @@ gem 'rails', '3.2.12'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'rmagick'
+gem 'carrierwave'
+gem 'fog'
+gem 'carrierwave_direct'
+gem 'sidekiq'
+
+
 
 
 # Gems used only for assets and not required
@@ -29,7 +36,7 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
