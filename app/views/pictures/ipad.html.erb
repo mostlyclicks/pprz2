@@ -1,19 +1,12 @@
 <!-- p id="notice"><%#= notice %></p -->
 
-<div class="h1bg" style=""><h1><em>The Daily Paparazzi</em></h1></div>
+<div class="h1bg" style=""><h1><em>The Daily Paparazffzi</em></h1></div>
 <h2><%#= @picture.title %></h2>
  
   <%#= image_tag @picture.pict_file_url, :class => 'big-image' %>
 
-
-
- 
-
-
-
 <%#= link_to 'Edit', edit_picture_path(@picture) %><!--  | -->
 <%#= link_to 'Back', pictures_path %>
-
 
 <div id="myCarousel" class="carousel slide">
   <ol class="carousel-indicators">
@@ -25,11 +18,15 @@
   <div class="carousel-inner">
   	<% @pictures.each do |picture| %>
     <div class="item <%#= item_first %>">
-    	<div class="h2bg"><h2><%= picture.title %></h2></div>
+      <div class="h2bg"><h2><%= picture.title %></h2></div>
       <%= image_tag picture.pict_file_url, :class => 'big-image' %></div>
+    
     <% end %>
   </div>
   <!-- Carousel nav -->
   <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
   <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 </div>
+
+
+

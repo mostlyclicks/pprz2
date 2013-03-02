@@ -12,10 +12,21 @@ class PicturesController < ApplicationController
     end
   end
 
+  def ipad
+    @pictures = Picture.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @pictures }
+    end
+
+  end
+
   # GET /pictures/1
   # GET /pictures/1.json
   def show
-    @picture = Picture.find(params[:id])
+    #@picture = Picture.find(params[:id])
+    @pictures = Picture.all
 
     respond_to do |format|
       format.html # show.html.erb

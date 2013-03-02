@@ -1,5 +1,7 @@
 Pprz2::Application.routes.draw do
+  
   resources :pictures
+  match 'pictures/ipad' => 'pictures#ipad'
 
 
   # The priority is based upon order of creation:
