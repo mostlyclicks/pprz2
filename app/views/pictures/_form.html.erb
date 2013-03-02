@@ -11,10 +11,13 @@
     </div>
   <% end %>
 
+  <%= f.hidden_field :key %>
+  <p>File: <%= @picture.image_name %></p>
   <div class="field">
-    <%= f.label :pict_file %><br />
-    <%= f.file_field :pict_file %>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -3,6 +3,8 @@ class PicturesController < ApplicationController
   # GET /pictures.json
   def index
     @pictures = Picture.all
+    @uploader = Picture.new.pict_file
+    @uploader.success_action_redirect = new_picture_url
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +26,7 @@ class PicturesController < ApplicationController
   # GET /pictures/new
   # GET /pictures/new.json
   def new
-    @picture = Picture.new
+    @picture = Picture.new(key: params[:key])
 
     respond_to do |format|
       format.html # new.html.erb

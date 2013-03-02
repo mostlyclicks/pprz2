@@ -21,3 +21,9 @@
 <br />
 
 <%= link_to 'New Picture', new_picture_path %>
+
+<%= direct_upload_form_for @uploader do |f| %>
+  <p><%= f.file_field :pict_file %></p>
+  <p><%= f.submit "Upload image" %></p>
+
+<% end %>
