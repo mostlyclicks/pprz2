@@ -507,3 +507,74 @@ Served asset /application.js - 304 Not Modified (0ms)
 
 Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 11:00:46 -0600
 Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures/2" for 127.0.0.1 at 2013-03-02 11:01:43 -0600
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPicture Load (0.5ms)[0m  [1mSELECT "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  Rendered pictures/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 11:01:44 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 11:01:44 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 11:01:44 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 11:01:44 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 11:01:44 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 11:01:44 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 11:01:44 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2013-03-02 11:01:46 -0600
+Processing by PicturesController#index as HTML
+  [1m[35mPicture Load (0.5ms)[0m  SELECT "pictures".* FROM "pictures" 
+  Rendered pictures/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2013-03-02 11:01:46 -0600
+Served asset /pictures.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-03-02 11:01:46 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-03-02 11:01:46 -0600
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-03-02 11:01:46 -0600
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-03-02 11:01:46 -0600
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2013-03-02 11:01:47 -0600
+Served asset /pictures.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-03-02 11:01:47 -0600
+Served asset /application.js - 304 Not Modified (0ms)
