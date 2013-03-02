@@ -11,3 +11,15 @@
  *= require_self
  *= require_tree .
  */
+ html {margin:0;padding:0;}
+ @media (max-width: 1024px) {
+ 	html {margin:0;padding:0;}
+	body {border:1px solid red;}
+
+	.big-image {min-height:100%;min-width:1024px;width:100%;height:auto;position:fixed;top:0;left:0;z-index:10;}
+	h1 {display:block;position:absolute;top:10px;left:10px;z-index: 20;
+			font-size:70px;}
+	h2 {position:absolute;bottom:100px;left:10px;z-index: 30;font-size:70px;}
+
+		
+}
